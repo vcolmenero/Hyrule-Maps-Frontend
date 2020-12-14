@@ -2,9 +2,10 @@
 
 # Intro
 
- A full-stack MERN, single-page app that allows a users to view all Ocarina of Time maps on wiki.
+ A fullstack MERN, single page app that allows a users to view all Ocarina of Time maps on wiki.
 
 # Technologies Used
+
 - HTML5
 - CSS3
 - Express.js
@@ -18,10 +19,8 @@
 # Wireframe
 ![wireframe](./src/images/wireframe.png)
 
-
-
-
-
+# Screenshot 
+![wireframe](./src/images/project3screenshot.png)
 
 
 # Getting Started with Create React App
