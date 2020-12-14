@@ -1,8 +1,90 @@
 .App {
- min-height: 100vh;
- display: flex;
- flex-direction: column;
+  text-align: center;
+  font-family: 'Cardo', serif;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  background-color: rgba(248, 204, 133, 0.884);
+  color: rgb(61, 53, 22);
+  background-image: url("./images/hyrule.png");
+  background-repeat: no-repeat;
 }
+
+.hidden {
+  display: none;
+}
+
+.title-section {
+  height: 8%;
+  padding-top: 0.5rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  width: 100vw;
+}
+
+.main {
+  display: flex;
+  height: 90%;
+}
+
+.left-section {
+  width: 45rem;
+  height: 95%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+
+
+
+.map-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 651px;
+  z-index: 5;
+  }
+
+  .info-container {
+    padding: 2rem;
+    padding-top: 12rem;
+    height: 5rem;
+    width: 651px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 550;
+  }
+  
+  .right-section {
+    width: 20rem;
+    height: 100%;
+    margin-right: 2rem;
+    padding-left: 1rem;
+    font-size: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: rgb(48, 105, 37)
+  }
+
+  a:hover {
+    color: rgb(61, 53, 22)
+  }
+
+  .location-name:hover {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 0.25rem;
+    color: rgb(48, 105, 37);
+  }
+
 
 
 

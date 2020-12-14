@@ -1,44 +1,42 @@
-import {signup} from '../services/userService';
-import {useState} from 'react';
-import {Link} from 'react-router-dom';
+import { signup } from '../services/userService';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-const SignupPage = (props) => {
+export default function SignupPage(props) {
 
-const [formState, setFormState] = useState({
-    name: '',
-    email: '',
-    password: ''
-})
+    const [ formState, setFormState ] = useState({
+        name: "",
+        email: "",
+        password: ""
+    });
 
-function formValid() {
-    return !!(formState.name && formState.email && formState.password)
-}
+    function formValid() {
+        return !!(formState.name && formState.email && formState.password)
+    }
 
-function handleChange(event) {
-    setFormState(prevState =>({
-        ...prevState,
-        [event.target.name]: event.target.value
-    }))
-}
+    function handleChange(event) {
+        setFormState(prevState => ({
+            ...prevState,
+            [event.target.name]: event.target.value
+        }));
+    }
 
-async function handleSubmit(event) {
-event.preventDefault();
-if(!formValid()) return;
-try{
-    await signup(formState);
-    // calling a helper function defined in App.js to add the user to state 
-} catch (error) {
-    alert(error.message);
-}
-}
-
-
+    async function handleSubmit(event) {
+        event.preventDefault();
+        if(!formValid()) return;
+        try {
+            await signup(formState);
+            props.handleSignupOrLogin();
+        } catch (error) {
+            alert(error.message);
+        }
+    }
 
     return (
         <main className="Page">
-            <h1>Signup</h1>
+            <h1>Sign Up</h1>
             <form onSubmit={handleSubmit}>
-          <div className="form-group">
+            <div className="form-group">
             <div className="col-sm-12">
               <input name="name" type="text" className="form-control" placeholder="Name" value={formState.name} onChange={handleChange} />
             </div>
@@ -62,6 +60,5 @@ try{
           </div>
         </form>
         </main>
-    )
-}
-export default SignupPage;
+    );
+};

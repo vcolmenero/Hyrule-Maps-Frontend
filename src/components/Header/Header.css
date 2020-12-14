@@ -1,26 +1,40 @@
 .Header {
-    background-color: #282c34;
-    padding-right: 10px;
+    background-color: #3e9f3d;
     padding-left: 10px;
+    padding-right: 10px;
     height: 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color:white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 0 18px 18px;
+    font-family: "Triforce";
+    box-shadow: 1px 1px 20px 1px black;
+}
+
+.Header a {
+    text-decoration: none;
+    color: #fff;
+    font-family: "Triforce";
 }
 
 .NavLinks {
     list-style: none;
     display: flex;
-    
-    
-}
-.Header a {
-    text-decoration: none;
-    color: #fff;
+    font-family: "Triforce";
 }
 
 .NavLinks li {
     margin-right: 20px;
-    
+    font-family: "Triforce";
+}
+
+.h1 {
+    font-family: "ravenna";
+
+}
+
+#Hyrule {
+    font-family: "Triforce";
 }
