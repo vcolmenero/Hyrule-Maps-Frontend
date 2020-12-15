@@ -1,13 +1,3 @@
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-
-import HomePage from "./pages/HomePage";
-import LoginPage from "./pages/LoginPage";
-import SignupPage from "./pages/SignupPage";
-
-import { Route, Switch, withRouter, Redirect } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { getUser, logout } from "./services/userService"
 
 import React, { Component } from 'react';
 import { locations } from './locations';
@@ -73,6 +63,8 @@ class App extends Component {
       this.setState({[place.id]: "hidden", currentLocation: {}})
     }
   } 
+
+  
   
   render() {
     return (
@@ -154,6 +146,45 @@ class App extends Component {
   }
 }
 
+// export function Index (props) {
+//   const [ userState, setUserState ] = useState({ user: getUser() });
+//   function handleSignupOrLogin() {
+//     setUserState({ user: getUser() });
+//     props.history.push('/dashboard');
+//   }
 
+//   function handleLogout() {
+//     logout();
+//     setUserState({ user: null });
+//     props.history.push('/');
+//   }
+
+//   return (
+//     <div className="App">
+//      <Header user={userState.user} handleLogout={handleLogout} />
+//      <Switch>
+//      {/* // inside switch you need a route for each page  */}
+//        <Route exact path='/' render={(props) =>
+//        <HomePage />
+//        } />
+//        <Route exact path='/dashboard' render={(props) =>
+//         getUser() ? 
+//           <DashboardPage />
+//           :
+//           <Redirect to="/login" />
+//        } />
+//       <Route exact path='/login' render={(props) =>
+//        <SignupPage handleSignupOrLogin={handleSignupOrLogin} />
+//        } />
+//      <Route exact path='/signup' render={(props) =>
+//         <LoginPage handleSignupOrLogin={handleSignupOrLogin} />
+//        } />
+    
+//    </Switch>
+//     <Footer />
+//     </div>
+//   );
+// }
 
 export default App;
+

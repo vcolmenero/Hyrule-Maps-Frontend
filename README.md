@@ -1,10 +1,10 @@
 # Hyrule Maps
 
-# Intro
+## Intro
 
  A fullstack MERN, single page app that allows a users to view all Ocarina of Time maps on wiki.
 
-# Technologies Used
+## Technologies Used
 
 - HTML5
 - CSS3
@@ -16,14 +16,15 @@
 - Google Fonts
 - Zelda wiki API
 
-# Wireframe
+## Wireframe
+
 ![wireframe](./src/images/wireframe.png)
 
-# Screenshot 
+## Screenshot
+
 ![wireframe](./src/images/project3screenshot.png)
 
-
-# Getting Started with Create React App
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
