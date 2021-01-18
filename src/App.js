@@ -36,21 +36,20 @@ const App = () => {
   // }
 
   const listLocations = locations.map((place, id) => {
-      console.log(place.name)
-      return (
-        <p key={id} onClick={showLocation}>{place.name}</p>
-      )
-    })
-  
+  console.log(place.name);
+  return (
+    <p key={place.id} onClick={() => showLocation(place)}>{place.name}</p>
+  );
+});
 
   const showLocation = (place) => {
-    if (this.state[place.id] === "hidden") {
-      this.setState(this.defaultState)
-      this.setState({ [place.id]: "", currentLocation: place })
-    } else {
-      this.setState({[place.id]: "hidden", currentLocation: {}})
-    }
-  } 
+    if (this.state[place.id] === 'hidden') {
+      this.setState(this.defaultState);
+      this.setState({ [place.id]: '', currentLocation: place });
+  }   else {
+      this.setState({ [place.id]: 'hidden', currentLocation: {} });
+  }
+};
 
   
   
@@ -122,7 +121,7 @@ const App = () => {
             </div>
           </div>
           <div className="right-section">
-            <div className="location-title">Locations:</div>
+            <div className="location-name">Locations:</div>
             {listLocations}
           </div>
         </div>
