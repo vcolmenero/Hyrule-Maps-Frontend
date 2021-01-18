@@ -1,61 +1,49 @@
+/* eslint-disable no-unused-vars */
 
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { locations } from './locations';
 import { fetchMe } from './fetching'
 import './App.css';
+import {render} from 'react';
+import userEvent from '@testing-library/user-event';
 
 
-class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      allLocations: [],
-      currentLocation: {},
-      castleTown: "hidden",
-      mountain: "hidden",
-      tree: "hidden",
-      field: "hidden",
-      gerudo: "hidden",
-      castle: "hidden",
-      kakariko: "hidden",
-      kokiri: "hidden",
-      lake: "hidden",
-      ranch: "hidden",
-      domain: "hidden"
-    }
-  }
+const App = () => {
+  const [castleTown, setCastleTown] = useState("hidden")
+  const [mountain, setMountain] = useState("hidden")
+  const [tree, setTree] = useState("hidden")
+  const [field, setField] = useState("hidden")
+  const [gerudo, setGerudo] = useState("hidden")
+  const [castle, setCastle] = useState("hiiden")
+  const [kakariko, setKakariko] = useState("hidden")
+  const [kokiri, setKakiri] = useState("hidden")
+  const [lake, setLake] = useState("hidden")
+  const [ranch, setRanch] = useState("hidden")
+  const [domain, setDomain] = useState("hidden")
+  const [currentLocation, setCurrentLocation] = useState("hidden")
+  
+  
+    
+  
+  
 
-  defaultState = {
-    castleTown: "hidden",
-    mountain: "hidden", 
-    tree: "hidden",
-    field: "hidden",
-    gerudo: "hidden",
-    castle: "hidden",
-    kakariko: "hidden",
-    kokiri: "hidden",
-    lake: "hidden",
-    ranch: "hidden",
-    domain: "hidden"
-  }
+  // componentWillMount = () => {
+  //   locations[0].description = fetchMe()
+  //   console.log("feched:?", fetchMe())
+  //   this.setState({
+  //   allLocations: locations,
+  //   })
+  // }
 
-  componentWillMount = () => {
-    locations[0].description = fetchMe()
-    console.log("feched:?", fetchMe())
-    this.setState({
-    allLocations: locations,
+  const listLocations = locations.map((place, id) => {
+      console.log(place.name)
+      return (
+        <p key={id} onClick={showLocation}>{place.name}</p>
+      )
     })
-  }
+  
 
-  listLocations = () =>  {
-    let locArray = []
-    locations.map(place => {
-      locArray.push(<div className="location-name" onClick={e => this.showLocation(place)} key={place.id}>{place.name}</div>)
-    })
-    return locArray
-  }
-
-  showLocation = (place) => {
+  const showLocation = (place) => {
     if (this.state[place.id] === "hidden") {
       this.setState(this.defaultState)
       this.setState({ [place.id]: "", currentLocation: place })
@@ -66,8 +54,8 @@ class App extends Component {
 
   
   
-  render() {
-    return (
+
+  return (
       <div className="App">
 
         <div className="main">
@@ -75,76 +63,74 @@ class App extends Component {
             <div className="map-container">
               <img src={require('./images/castleTown.png')} 
                 alt="Hyrule map" 
-                className={`map-item ${this.state.castleTown}`} 
+                className={`map-item ${castleTown}`} 
                 id="castleTown">
               </img>
               <img src={require('./images/deathMountain.png')} 
                 alt="Hyrule map" 
-                className={`map-item ${this.state.mountain}`} 
+                className={`map-item ${mountain}`} 
                 id="mountain">
               </img>
               <img src={require('./images/dekuTree.png')} 
                 alt="Hyrule map" 
-                className={`map-item ${this.state.tree}`} 
+                className={`map-item ${tree}`} 
                 id="tree">
               </img>
               <img src={require('./images/field.png')} 
                 alt="Hyrule map" 
-                className={`map-item ${this.state.field}`} 
+                className={`map-item ${field}`} 
                 id="field">
               </img>
               <img src={require('./images/gerudoValley.png')} 
                 alt="Hyrule map" 
-                className={`map-item ${this.state.gerudo}`} 
+                className={`map-item ${gerudo}`} 
                 id="gerudo">
               </img>
               <img src={require('./images/hyruleCastle.png')} 
                 alt="Hyrule map" 
-                className={`map-item ${this.state.castle}`} 
+                className={`map-item ${castle}`} 
                 id="castle">
               </img>
               <img src={require('./images/kokiriForest.png')} 
                 alt="Hyrule map" 
-                className={`map-item ${this.state.kokiri}`} 
+                className={`map-item ${kokiri}`} 
                 id="kokiri">
               </img>
               <img src={require('./images/kakariko.png')} 
                 alt="Hyrule map" 
-                className={`map-item ${this.state.kakariko}`} 
+                className={`map-item ${kakariko}`} 
                 id="kokiri">
               </img>
               <img src={require('./images/lakeHylia.png')} 
                 alt="Hyrule map" 
-                className={`map-item ${this.state.lake}`} 
+                className={`map-item ${lake}`} 
                 id="lake">
               </img>
               <img src={require('./images/lonLon.png')} 
                 alt="Hyrule map" 
-                className={`map-item ${this.state.ranch}`} 
+                className={`map-item ${ranch}`} 
                 id="ranch">
               </img>
               <img src={require('./images/zorasDomain.png')} 
                 alt="Hyrule map" 
-                className={`map-item ${this.state.domain}`} 
+                className={`map-item ${domain}`} 
                 id="domain">
               </img>
             </div>
             <div className="info-container">
-              {this.state.currentLocation.description}
+              {currentLocation}
             </div>
           </div>
-
           <div className="right-section">
             <div className="location-title">Locations:</div>
-            {this.listLocations()}
+            {listLocations}
           </div>
         </div>
         <img src="hyrule" class="hyrule" alt="Hyrule map"></img>
-
-      </div>
+        </div>
     );
   }
-}
+
 
 // export function Index (props) {
 //   const [ userState, setUserState ] = useState({ user: getUser() });

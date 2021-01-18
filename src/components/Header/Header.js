@@ -5,7 +5,7 @@ export default function Header(props) {
     return (
         <header className="Header">
             <Link to="/">
-                <h1 id="Hyrule">Map of Hyrule</h1>
+                <h1 id="Hyrule">Hyrule Maps</h1>
             </Link>
             <nav>
                 <ul className="NavLinks">

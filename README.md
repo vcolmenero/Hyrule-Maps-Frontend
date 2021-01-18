@@ -24,9 +24,9 @@
 
 ![wireframe](./src/images/project3screenshot.png)
 
-# Deploy!
+# Deploy
 
-https://hyrule-maps.netlify.app/
+<https://hyrule-maps.netlify.app/>
 
 ## Getting Started with Create React App
 
