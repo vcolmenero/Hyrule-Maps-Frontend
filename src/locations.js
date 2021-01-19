@@ -1,6 +1,6 @@
 import React from 'react';
 
-      export const listLocations = [
+      export const locations = [
   {
     name: "Hyrule Castle Town", 
     id: "castleTown",
