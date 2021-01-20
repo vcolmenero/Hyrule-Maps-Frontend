@@ -1,11 +1,11 @@
 import { setToken, getUserFromToken, removeToken } from './tokenService';
 
-const BASE_URL = 'https://hyrule-maps-backend.herokuapp.com//api/users';
+const BASE_URL = 'https://hyrule-maps.netlify.app/';
 
 
 
 function signup(user) {
-    return fetch(BASE_URL + '/signup', {
+    return fetch(BASE_URL + '/api/users/signup', {
         method: 'POST',
         headers: {
             'Content-Type': 'Application/json'

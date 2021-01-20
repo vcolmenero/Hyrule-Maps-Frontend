@@ -1,6 +1,4 @@
-
 export function fetchMe() {
-
 
   function getContent() {
     let contentURL = 'https://en.wikipedia.org/w/api.php?&origin=*&action=query&prop=revisions&rvprop=content&format=json&titles='
@@ -10,12 +8,10 @@ export function fetchMe() {
       }).then(function (data) {
         let page = data.query.pages
         let pageId = Object.keys(data.query.pages)[0]
-        console.log("HeyListen??", page[pageId].revisions[0]['*'])
+        console.log("heyLisyen??", page[pageId].revisions[0]['*'])
       })
   }
 
   getContent()
 }
-    
-    
-    
+
