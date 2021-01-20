@@ -69,7 +69,7 @@ function App() {
   ));
 
   function getContent() {
-    let contentURL = 'https://en.wikipedia.org/w/api.php?&origin=*&action=query&prop=revisions&rvprop=content&format=json&titles='
+    let contentURL = 'https://zelda.gamepedia.com/api.php?format=json&action=query&generator=images&gimlimit=max&prop=imageinfo&iiprop=url&titles=Hyrule_Compendium#Entries'
     fetch(contentURL + "Hyrule")
       .then(function (resp) {
         return resp.json()
