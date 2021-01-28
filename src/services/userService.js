@@ -1,6 +1,6 @@
 import { setToken, getUserFromToken, removeToken } from './tokenService';
 
-const BASE_URL = 'https://hyrule-maps.netlify.app/';
+const BASE_URL = 'http://localhost:3001';
 
 
 

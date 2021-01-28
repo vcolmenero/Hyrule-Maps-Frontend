@@ -6,7 +6,7 @@ import SignupPage from "./pages/SignupPage";
 import DashboardPage from "./pages/DashboardPage";
 
 import { Route, Switch, Redirect } from "react-router-dom";
-import { useState } from "react";
+import { useState} from "react";
 import { getUser, logout } from "./services/userService"
 import App from "./App";
 
@@ -14,7 +14,7 @@ export function Main (props) {
     const [ userState, setUserState ] = useState({ user: getUser() });
     function handleSignupOrLogin() {
       setUserState({ user: getUser() });
-      props.history.push('/dashboard');
+      props.history.push('/');
     }
   
     function handleLogout() {
