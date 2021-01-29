@@ -26,7 +26,7 @@
 
 # Deploy
 
-<https://hyrule-maps.netlify.app/>
+<https://hyrule-maps-frontend.herokuapp.com/>
 
 ## Getting Started with Create React App
 
